@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>NumerodeCaracter</title>
+
+  <script language="JavaScript">
+function numerodeCaracter()
+  {
+  var mostrar, caracter, quantidade, i;
+  caracter=document.frmEntrada.txtCaracter.value;
+  quantidade=parseInt(document.frmEntrada.txtNumero.value);
+  mostrar=" ";
+  for(i=0; i<quantidade; ++i)
+  {
+    mostrar += caracter;
+  }
+  document.write( "<table border='3'><tr><td>"+mostrar+"</td></tr></table>");
+  }
+  </script>
+</head>
+
+<body>
+<form name="frmEntrada">
+Caracter a repitir:<input type="text" name="txtCaracter" value=""><br>
+Quantas vezes devo repetir:<input type="text" name="txtNumero" value=""><br>
+
+<input type="button" name="btnNumerodeCaracter" value="Clique Para Ver Como Ficou" onClick="numerodeCaracter()"><br>
+</form>
+</body>
+</html>

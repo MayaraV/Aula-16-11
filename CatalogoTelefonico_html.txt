@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>CatalogoTelefonico</title>
+
+  <script language="JavaScript">
+  function catalogoTelefonico()
+  {
+  var ultimoNome, formatoCatalogo, nomeInicial, i;
+  nomeInicial = document.frmEntrada.txtNome.value;
+
+  ultimoNome = nomeInicial.lastIndexOf(" ");
+  formatoCatalogo = nomeInicial.substr(ultimoNome+1, nomeInicial.length - ultimoNome) + ", " +
+                 nomeInicial.substr(0, ultimoNome);
+  
+  document.write("<table border='3'>");
+  document.write("<tr><td>" + nomeInicial + "</td></tr>");
+  document.write("<tr><td>" + formatoCatalogo + "</td></tr>");
+  document.write("</table>");
+  }
+  </script>
+</head>
+
+<body>
+<form name="frmEntrada">
+Nome:<input type="text" name="txtNome" value="Mayara Viana"><br>
+
+<input type="button" name="btnCatalogoTelefonico" value="Nome no Formato Catálogo Telefônico" onClick="catalogoTelefonico()"><br>
+</form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title>LinhaColuna</title>
+  <script language="JavaScript">
+
+  function linha()
+  {
+  var caracter, i;
+  caracter = document.frmEntrada.txtCaract.value;
+  document.write("<table border='3'><tr>");
+  
+  for(i=0; i<caracter.length; ++i)
+  {
+    document.write("<td>" + caracter.charAt(i) + "</td>");
+  }
+  document.write("</tr></table>");
+  }
+
+  
+  function coluna()
+  {
+  var caracter, i;
+  caracter = document.frmEntrada.txtCaract.value;
+  document.write("<table border='3'>");
+
+  for(i=0; i<caracter.length; ++i)
+  {
+    document.write("<tr><td>" + caracter.charAt(i) + "</td></tr>");
+  }
+  document.write("</table>");
+  }
+  </script>
+
+</head>
+<body>
+<form name="frmEntrada">
+Caracter:<input type="text" name="txtCaract" value=""><br>
+<input type="button" name="btnLinha" value="Caracter em Linha" onClick="linha()"><br>
+<input type="button" name="btnColuna" value="Caracter em Coluna" onClick="coluna()"><br>
+
+</form>
+</body>
+</html>

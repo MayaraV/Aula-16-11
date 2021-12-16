@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InformacaoFrase</title>
+
+  <script language="JavaScript">
+   function informacaoEscrita()
+  {
+  var escrita, i, quantidadeVogais, quantidadeConsoantes, quantidadeDigitos, quantidadeOutros;
+  escrita = document.frmEntrada.txtEscrita.value;
+
+  quantidadeVogais = 0;
+  quantidadeConsoantes = 0;
+  quantidadeDigitos = 0;
+  quantidadeOutros = 0;
+
+  for(i=0; i<escrita.length; ++i)
+  {
+    if (escrita.charAt(i).toUpperCase()=="A" || escrita.charAt(i).toUpperCase()=="E" ||
+        escrita.charAt(i).toUpperCase()=="I" || escrita.charAt(i).toUpperCase()=="O" ||
+        escrita.charAt(i).toUpperCase()=="U")
+        {
+          quantidadeVogais++;
+        }
+    else
+       if (escrita.charCodeAt(i)>=65 && escrita.charCodeAt(i)<=90 || 
+           escrita.charCodeAt(i)>=97 && escrita.charCodeAt(i)<=122)
+           {
+             quantidadeConsoantes++;
+           }
+        else
+           if (escrita.charCodeAt(i)>=48 && escrita.charCodeAt(i)<=57)
+              {
+                quantidadeDigitos++;
+              }  
+           else
+              {
+                quantidadeOutros++;
+              }
+  }
+  document.write("<table border='1'>");
+  document.write("<tr><td>Qtde de vogais:</td><td>" + quantidadeVogais + "</td></tr>");
+  document.write("<tr><td>Qtde de consoantes:</td><td>" + quantidadeConsoantes + "</td></tr>");
+  document.write("<tr><td>Qtde de digitos:</td><td>" + quantidadeDigitos + "</td></tr>");
+  document.write("<tr><td>Qtde de outros caracteres:</td><td>" + quantidadeOutros + "</td></tr>");
+  document.write("</table>");
+  }
+  </script>
+</head>
+
+<body>
+  <form name="frmEntrada">
+Escrita:<input type="text" name="txtEscrita" value=""><br>
+
+<input type="button" name="btnInformacaoEscrita" value="Informações sobre o que Escreveu " onClick="informacaoEscrita()"><br>
+</form>
+</body>
+</html>

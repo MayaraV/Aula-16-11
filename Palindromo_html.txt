@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>Palíndromo </title>
+  <script language="JavaScript">
+
+    function palindromo()
+  {
+  var palavra, inverter, naoEspaco, i;
+  palavra = document.frmEntrada.txtPF.value;
+
+  naoEspaco = "";
+  for(i=0; i<palavra.length; ++i)
+  {
+    if (palavra.charAt(i)!=" ")
+    {
+      naoEspaco += palavra.charAt(i);
+    }
+  }
+  inverter = "";
+  for(i=naoEspaco.length-1; i>=0; --i)
+  {
+    inverter += naoEspaco.charAt(i);
+  }
+
+  document.write("<table border='1'>");
+  document.write("<tr><td>" + naoEspaco + "</td></tr>");
+  document.write("<tr><td>" + inverter + "</td></tr>");
+  document.write("<tr><td>" + (naoEspaco==inverter?"O que Digitou é um Palíndromo":"O que Digitou não é um Palíndromo") + "</td></tr>");
+  document.write("</table>");
+  }
+  </script>
+</head>
+
+<body>
+<form name="frmEntrada">
+Ecreva uma Palavra ou Frase:<input type="text" name="txtPF" value=""><br>
+
+<input type="button" name="btnPalindromo" value="Verificação de Palíndromo" onClick="palindromo()"><br>
+</form>
+</body>
+</html>
